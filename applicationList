@@ -1,0 +1,68 @@
+
+#pragma once
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <map>
+#include <algorithm>
+
+class applicationList {
+
+    private:
+        // stores integers by order they were entered 
+        //used a vector to maintian order and add and delete 
+        std::vector<int> vec;
+        //used a list for frequencies 
+        // stores integers by repetition 
+        std::list<int> lst;
+
+    public:
+        //precondition: value is an integer 
+        //postcondition: value is added to vector and list  
+        void add(int value) {
+            vec.push_back(value);
+            lst.push_back(value);
+        }
+
+        //precondition: value is an integer 
+       //postcondition: removes first value found that matches, if able to remove return as true 
+        bool remove(int value) {
+            bool found = false;
+
+            auto itVec = std::find(vec.begin(), vec.end(), value);
+            if (itVec != vec.end()) {
+                vec.erase(itVec);
+                found = true;
+            }
+
+            auto itList = std::find(lst.begin(), lst.end(), value);
+            if (itList != lst.end()) {
+                lst.erase(itList);
+                found = true;
+            }
+
+            return found;
+        }
+
+      //precondition:none 
+     //postcondition: displays all values in order using vector 
+        void display() const {
+            std::cout << "\n\tcontainer: ";
+            for (int value : vec)
+                std::cout << value << " ";
+            std::cout << "\n";
+        }
+
+        // Pre: none
+       // Post: Displays the frequency of each value using a list to count 
+        void frequencies() const {
+            std::map<int, int> freq;
+            for (int value : lst)
+                freq[value]++;
+
+            std::cout << "\n\tFrequencies:\n";
+            for (const auto& pair : freq)
+                std::cout << "        " << pair.first << " : " << pair.second << "\n";
+        }
+    };
