@@ -18,7 +18,6 @@ const char INDENT = '\t';
 char mainMenu();
 char vectorMenu();
 void optionOne();
-vector<string> split(const string&, const char);
 
 
 void optionTwo();
@@ -102,7 +101,6 @@ char vectorMenu(){
 void optionOne() {
 	std::vector <student> studentDat;
     std::vector<student> v2;
-	vector<string>tokens;
     vector<student>::iterator tempIter;
     vector<student>::reverse_iterator tempReverseIter;
 	fstream fileReader;
@@ -135,18 +133,15 @@ void optionOne() {
 		case 'D':
 			fileReader.open("input.dat");
 			if (fileReader.is_open()) {
-				while (getline(fileReader, tempStr)) {
-					tokens = split(tempStr, ',');
-					try {
-						newStudent.setName(tokens[0]);
-						newStudent.setGradeLevel(tokens[1]);
-						newStudent.setGPA(stof(tokens[2]));
-					}
-					catch (...) {
-						cerr << "\n\t" << "ERROR TRANSLATING FILE. \n\n";
-					}
-					studentDat.emplace_back(newStudent);
-				}
+                while (getline(fileReader, tempName, ',') &&
+                    getline(fileReader, tempYear, ',') &&
+                    getline(fileReader, tempStr))
+                {
+                    newStudent.setName(tempName);
+                    newStudent.setGradeLevel(tempYear);
+                    newStudent.setGPA(stof(tempStr));
+                    studentDat.emplace_back(newStudent);
+                }
 				fileReader.close();
 			}
 			else {
@@ -335,29 +330,6 @@ void optionOne() {
 		system("pause");
 	} while (!endProgram);
 
-}
-
-//precondition: valid string to split
-//postcondition: vector split by the delimiter. 
-vector<string> split(const string& target, const char delimiter) {
-	string tempStr = "";
-	vector<string> tokens;
-	auto flush = [&]()->void {
-		if (!tempStr.empty()) {
-			tokens.push_back(tempStr);
-			tempStr.clear();
-		}
-		};
-	for (char c : target) {
-		if (c == delimiter) {
-			flush();
-		}
-		else {
-			tempStr += c;
-		}
-	}
-	flush();
-	return tokens;
 }
 
 
