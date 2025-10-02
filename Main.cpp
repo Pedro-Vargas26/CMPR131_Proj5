@@ -31,9 +31,9 @@ int main() {
     do {
         char menuChoice = mainMenu();
         switch (menuChoice) {
-        case 1: optionOne();break;
-        case 2: optionTwo();break;
-        case 3: optionThree();break;
+        case 1: optionOne(); break;
+        case 2: optionTwo(); break;
+        case 3: optionThree(); break;
         default:
             return EXIT_SUCCESS;
         }
@@ -44,95 +44,95 @@ int main() {
 
 
 char mainMenu() {
-	bool invalidChoice = true;
+    bool invalidChoice = true;
 
-	//rh reference to avoid instancing a char
+    //rh reference to avoid instancing a char
 
-	int choice = 0;
-		system("cls");
-		cout << "\n";
-        cout << INDENT << "CMPR131 Chapter 5: Vector and List Container by Pedro Vargas (9 / 18 / 25)\n";
-        cout << INDENT << string(90, (char)205) << endl;
-        cout << INDENT << "1 > Vector container\n";
-        cout << INDENT << "2 > List container\n";
-        cout << INDENT << "3 > Application using Vector and /or List container\n";
-        cout << INDENT << string(90, (char)196) << endl;
-        cout << INDENT << "0 > Exit\n";
-        cout << INDENT << string(90, (char)205) << endl;
-		choice = inputInteger("\tEnter choice:", 0,3);
-	return choice;
+    int choice = 0;
+    system("cls");
+    cout << "\n";
+    cout << INDENT << "CMPR131 Chapter 5: Vector and List Container by Pedro Vargas (9 / 18 / 25)\n";
+    cout << INDENT << string(90, (char)205) << endl;
+    cout << INDENT << "1 > Vector container\n";
+    cout << INDENT << "2 > List container\n";
+    cout << INDENT << "3 > Application using Vector and /or List container\n";
+    cout << INDENT << string(90, (char)196) << endl;
+    cout << INDENT << "0 > Exit\n";
+    cout << INDENT << string(90, (char)205) << endl;
+    choice = inputInteger("\tEnter choice:", 0, 3);
+    return choice;
 }
 
-char vectorMenu(){
-	/*Needs validation of input Within A-S or 1 and 0. */
+char vectorMenu() {
+    /*Needs validation of input Within A-S or 1 and 0. */
 
 
-	cout << INDENT << "Vectors are sequence containers representing arrays that can change in size.\n\n";
-	cout << INDENT << "1 > Vector's member functions\n";
-	cout << INDENT<< string(100, (char)205) << endl;
-	cout << INDENT << INDENT << "A > clear() - Removes all elements from the vector(which are destroyed)\n";
-	cout << INDENT << INDENT << "B > reserve(n) - Requests that the vector capacity be at least enough to contain n elements\n";
-	cout << INDENT << INDENT << "C > resize(n) - Resizes the container so that it contains n elements\n";
-	cout << INDENT << INDENT << "D > Read input.dat and push_back(e) - Adds a new element at the end of the vector\n";
-	cout << INDENT << INDENT << "E > pop_back() - Removes the last element in the vector\n";
-	cout << INDENT << INDENT << "F > front() - Returns a reference to the first element in the vector\n";
-	cout << INDENT << INDENT << "G > back() - Returns a reference to the last element in the vector\n";
-	cout << INDENT << INDENT << "H > index using at() or []) - Returns a reference to the element at position n in the vector\n";
-	cout << INDENT << INDENT << "I > begin() - Returns an iterator pointing to the first element in the vector\n";
-	cout << INDENT << INDENT << "J > end() Returns an iterator referring to the past - the - end element in the vector\n";
-	cout << INDENT << INDENT << "K > Using iterator begin() and end() returns all elements in the vector\n";
-	cout << INDENT << INDENT << "L > rbegin() - Returns a reverse iterator pointing to the last element in the vector\n";
-	cout << INDENT << INDENT << "M > rend() - Returns a reverse iterator pointing to the theoretical element preceding the first\n";
-	cout << INDENT << INDENT << "element in the vector\n";
-	cout << INDENT << INDENT << "N > Using iterator rbegin() and rend() returns all elements in the vector\n";
-	cout << INDENT << INDENT << "O > erase(it) - Removes from the vector a single element(using an iterator)\n";
-	cout << INDENT << INDENT << "P > erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)\n";
-	cout << INDENT << INDENT << "Q > insert(it, entry) - Insert a new entry at the iterator.\n";
-	cout << INDENT << INDENT << "R > swap() - Exchanges the content of the container by another vector's content of the same type\n";
-	cout << INDENT << INDENT << "S > Sort - Sorts the vector.\n";
-	cout << INDENT << string(100, (char)196) << endl;
-	cout << INDENT << INDENT << "0 > return\n";
-	cout << INDENT << string(100, (char)205) << endl;
-	char optionChoice = inputChar("\t\tOption:");
-	return toupper(optionChoice);
+    cout << INDENT << "Vectors are sequence containers representing arrays that can change in size.\n\n";
+    cout << INDENT << "1 > Vector's member functions\n";
+    cout << INDENT << string(100, (char)205) << endl;
+    cout << INDENT << INDENT << "A > clear() - Removes all elements from the vector(which are destroyed)\n";
+    cout << INDENT << INDENT << "B > reserve(n) - Requests that the vector capacity be at least enough to contain n elements\n";
+    cout << INDENT << INDENT << "C > resize(n) - Resizes the container so that it contains n elements\n";
+    cout << INDENT << INDENT << "D > Read input.dat and push_back(e) - Adds a new element at the end of the vector\n";
+    cout << INDENT << INDENT << "E > pop_back() - Removes the last element in the vector\n";
+    cout << INDENT << INDENT << "F > front() - Returns a reference to the first element in the vector\n";
+    cout << INDENT << INDENT << "G > back() - Returns a reference to the last element in the vector\n";
+    cout << INDENT << INDENT << "H > index using at() or []) - Returns a reference to the element at position n in the vector\n";
+    cout << INDENT << INDENT << "I > begin() - Returns an iterator pointing to the first element in the vector\n";
+    cout << INDENT << INDENT << "J > end() Returns an iterator referring to the past - the - end element in the vector\n";
+    cout << INDENT << INDENT << "K > Using iterator begin() and end() returns all elements in the vector\n";
+    cout << INDENT << INDENT << "L > rbegin() - Returns a reverse iterator pointing to the last element in the vector\n";
+    cout << INDENT << INDENT << "M > rend() - Returns a reverse iterator pointing to the theoretical element preceding the first\n";
+    cout << INDENT << INDENT << "element in the vector\n";
+    cout << INDENT << INDENT << "N > Using iterator rbegin() and rend() returns all elements in the vector\n";
+    cout << INDENT << INDENT << "O > erase(it) - Removes from the vector a single element(using an iterator)\n";
+    cout << INDENT << INDENT << "P > erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)\n";
+    cout << INDENT << INDENT << "Q > insert(it, entry) - Insert a new entry at the iterator.\n";
+    cout << INDENT << INDENT << "R > swap() - Exchanges the content of the container by another vector's content of the same type\n";
+    cout << INDENT << INDENT << "S > Sort - Sorts the vector.\n";
+    cout << INDENT << string(100, (char)196) << endl;
+    cout << INDENT << INDENT << "0 > return\n";
+    cout << INDENT << string(100, (char)205) << endl;
+    char optionChoice = inputChar("\t\tOption:");
+    return toupper(optionChoice);
 
 }
 
 void optionOne() {
-	std::vector <student> studentDat;
+    std::vector <student> studentDat;
     std::vector<student> v2;
     vector<student>::iterator tempIter;
     vector<student>::reverse_iterator tempReverseIter;
-	fstream fileReader;
-	student newStudent;
+    fstream fileReader;
+    student newStudent;
     int tempVar = 0;
-	std::string tempStr = "";
+    std::string tempStr = "";
     string tempName = "";
     string tempYear = "";
     double gpa = 0;
 
-	bool endProgram = false;
-	do {
-		system("cls");
+    bool endProgram = false;
+    do {
+        system("cls");
 
-		char vectorOption = vectorMenu();
+        char vectorOption = vectorMenu();
 
-		switch (vectorOption) {
-		case 'A':
-			studentDat.clear();
-			cout << "\n" << INDENT << "The Vector has been cleared. \n\n";
-			break;
-		case 'B':
-			studentDat.reserve(inputInteger("\tEnter the capacity (1...100):",1,100));
-			cout << "\n" << INDENT << "Vector has been reserved " << studentDat.capacity() << " elements.\n\n";
-			break;
-		case 'C':
-			studentDat.resize(inputInteger("\tEnter the new size (1...100):", 1, 100));
-			cout << "\n" << INDENT << "vector has been resized to " << studentDat.size() << " elements.\n\n";
-			break;
-		case 'D':
-			fileReader.open("input.dat");
-			if (fileReader.is_open()) {
+        switch (vectorOption) {
+        case 'A':
+            studentDat.clear();
+            cout << "\n" << INDENT << "The Vector has been cleared. \n\n";
+            break;
+        case 'B':
+            studentDat.reserve(inputInteger("\tEnter the capacity (1...100):", 1, 100));
+            cout << "\n" << INDENT << "Vector has been reserved " << studentDat.capacity() << " elements.\n\n";
+            break;
+        case 'C':
+            studentDat.resize(inputInteger("\tEnter the new size (1...100):", 1, 100));
+            cout << "\n" << INDENT << "vector has been resized to " << studentDat.size() << " elements.\n\n";
+            break;
+        case 'D':
+            fileReader.open("input.dat");
+            if (fileReader.is_open()) {
                 while (getline(fileReader, tempName, ',') &&
                     getline(fileReader, tempYear, ',') &&
                     getline(fileReader, tempStr))
@@ -142,18 +142,18 @@ void optionOne() {
                     newStudent.setGPA(stof(tempStr));
                     studentDat.emplace_back(newStudent);
                 }
-				fileReader.close();
-			}
-			else {
-				cerr << "\n" << INDENT << "Input file: input.dat wasn't found.\n";
-			}
+                fileReader.close();
+            }
+            else {
+                cerr << "\n" << INDENT << "Input file: input.dat wasn't found.\n";
+            }
             cout << "\n\t" << "The vector now has " << studentDat.size() << " elements. " << "\n\n";
-			for (int i = 0; i < studentDat.size();i++) {
-				cout << INDENT << "[" <<i <<  "]" << ": " << studentDat[i] << endl;
-			}
+            for (int i = 0; i < studentDat.size(); i++) {
+                cout << INDENT << "[" << i << "]" << ": " << studentDat[i] << endl;
+            }
             cout << "\n";
-			break;
-		case 'E':
+            break;
+        case 'E':
             cout << "\n" << INDENT;
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
@@ -162,29 +162,29 @@ void optionOne() {
                 cout << "Element [" << studentDat.size() - 1 << "]: " << studentDat.back() << ", has been removed from the vector. \n\n";
                 studentDat.pop_back();
                 cout << INDENT << "The vector now has " << studentDat.size() << " elements. \n\n";
-                for (int i = 0; i < studentDat.size();i++) {
+                for (int i = 0; i < studentDat.size(); i++) {
                     cout << INDENT << "[" << i << "]" << ": " << studentDat[i] << endl;
                 }
             }
             cout << "\n";
-			break;
-		case 'F':
+            break;
+        case 'F':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
             else {
                 cout << "\n\n" << INDENT << "The element from the front of the vector: [0] " << studentDat.front() << "\n\n";
             }
-			break;
-		case 'G':
+            break;
+        case 'G':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
             else {
                 cout << "\n\n" << INDENT << "The element from the back of the vector: [" << studentDat.size() - 1 << "] " << studentDat.back() << "\n\n";
             }
-			break;
-		case 'H':
+            break;
+        case 'H':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -194,8 +194,8 @@ void optionOne() {
                 cout << "\n\t" << "vector.at(" << tempVar << "): " << studentDat.at(tempVar);
                 cout << "\n\t" << "Vector[" << tempVar << "]: " << studentDat[tempVar] << "\n\n";
             }
-			break;
-		case 'I':
+            break;
+        case 'I':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -203,8 +203,8 @@ void optionOne() {
                 tempIter = studentDat.begin();
                 cout << "\n\t" << "The iterator referring the first element: " << &tempIter << "(" << *tempIter << ")\n\n";
             }
-			break;
-		case 'J':
+            break;
+        case 'J':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -213,19 +213,19 @@ void optionOne() {
                 cout << "\n\t" << "The iterator referring the past-the-end element: " << &tempIter << "\n\n";
             }
             break;
-		case 'K':
+        case 'K':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
             else {
                 cout << "\n\t" << "using begin() and end(), the vector contains: \n";
-                for (auto iter = studentDat.begin();iter != studentDat.end();iter++) {
+                for (auto iter = studentDat.begin(); iter != studentDat.end(); iter++) {
                     cout << INDENT << INDENT << &iter << "(" << *iter << ")\n";
                 }
                 cout << "\n";
             }
-			break;
-		case 'L':
+            break;
+        case 'L':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -234,7 +234,7 @@ void optionOne() {
                 cout << "\n\t" << "The reverse iterator pointing to the last element: " << &tempReverseIter << "(" << *tempReverseIter << ")\n\n";
             }
             break;
-		case 'M':
+        case 'M':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -242,20 +242,20 @@ void optionOne() {
                 tempReverseIter = studentDat.rend();
                 cout << "\n\t" << "The reverse iterator pointing to the theoretical element preceding the first element in the vector: " << &tempReverseIter << "\n\n";
             }
-			break;
-		case 'N':
+            break;
+        case 'N':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
             else {
                 cout << "\n\t" << "Using rbegin() and rend(), the vector contains reversed elements: \n";
-                for (auto reverse_iter = studentDat.rbegin();reverse_iter != studentDat.rend();reverse_iter++) {
+                for (auto reverse_iter = studentDat.rbegin(); reverse_iter != studentDat.rend(); reverse_iter++) {
                     cout << "\t\t" << &reverse_iter << "(" << *reverse_iter << ")\n";
                 }
                 cout << "\n";
             }
-			break;
-		case 'O':
+            break;
+        case 'O':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -264,9 +264,9 @@ void optionOne() {
                 studentDat.erase(tempIter + 1);
                 cout << "\n\tAn Element after the begin iterator " << &tempIter << " has been removed.\n\n";
             }
-            
-			break;
-		case 'P':
+
+            break;
+        case 'P':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
@@ -277,12 +277,12 @@ void optionOne() {
                 cout << " and going up to end iterator " << &tempIter << " have been removed.\n\n";
                 studentDat.erase(studentDat.begin(), studentDat.end());
             }
-			break;
-		case 'Q':
-           
+            break;
+        case 'Q':
+
             cout << "\n\n";
             tempName = inputString("\tEnter student name: ", true);
-            tempYear = (string() + (char)('0'+inputInteger("\tEnter the his/her level (1-Freshman, 2-Sophmore, 3-Junior, or 4-Senior):", 1, 4)));
+            tempYear = (string() + (char)('0' + inputInteger("\tEnter the his/her level (1-Freshman, 2-Sophmore, 3-Junior, or 4-Senior):", 1, 4)));
             gpa = inputDouble("\tEnter his/her GPA (0.0...4.0):", 0.0, 4.0);
             newStudent.setName(tempName);
             newStudent.setGradeLevel(tempYear);
@@ -290,108 +290,108 @@ void optionOne() {
 
             if (studentDat.size() >= 1) {
                 cout << "\n\t" << "The new element has been inserted after the begin iterator.\n\n";
-                studentDat.insert(studentDat.begin()+1, newStudent);
+                studentDat.insert(studentDat.begin() + 1, newStudent);
             }
             else {
                 cout << "\n\t" << "The new element has been inserted at the begin iterator. \n\n";
                 studentDat.push_back(newStudent);
             }
-			break;
-		case 'R':
+            break;
+        case 'R':
             cout << "\n\t" << "Vector (V2) is initially empty. \n\n";
             cout << "\t" << "Vector (V1) is empty after swapped with vector (V2) \n\n";
             cout << "\t" << "Vector (V2) after being swapped with vector (V1)\n\n";
             v2.swap(studentDat);
             if (!v2.empty()) {
-                for (int i = 0; i < v2.size();i++) {
+                for (int i = 0; i < v2.size(); i++) {
                     cout << INDENT << "[" << i << "]: " << v2[i] << endl;
                 }
             }
-			break;
-		case 'S':
+            break;
+        case 'S':
             if (studentDat.empty()) {
                 cout << "\n\tVector is empty. \n\n";
             }
             else {
                 cout << "\n\t" << "Vector has been sorted:\n\n";
                 std::sort(studentDat.begin(), studentDat.end());
-                for (int i = 0; i < studentDat.size();i++) {
+                for (int i = 0; i < studentDat.size(); i++) {
                     cout << INDENT << "[" << i << "]: " << studentDat[i] << endl;
                 }
                 cout << "\n\n";
             }
 
-			break;
-		default:
-			cout << INDENT << "Sending you back to main menu...\n\n";
-			endProgram = true;
-			break;
-		}
-		system("pause");
-	} while (!endProgram);
+            break;
+        default:
+            cout << INDENT << "Sending you back to main menu...\n\n";
+            endProgram = true;
+            break;
+        }
+        system("pause");
+    } while (!endProgram);
 
 }
 
 
 
 int listAndVectorMenu() {
-        system("cls");
-        cout << "\n\t3> Application using Vector and/or List container";
-        cout << "\n\t" << string(105, char(205));
-        cout << "\n\t1> Add an integer";
-        cout << "\n\t2> Delete an integer";
-        cout << "\n\t3> Display input integers";
-        cout << "\n\t4> Display frequencies of integers";
-        cout << "\n\t" << string(105, char(196));
-        cout << "\n\t0>  Exit";
-        cout << "\n\t" << string(105, char(205));
-        return inputInteger("\n\tOption: ", 0, 4);
- 
+    system("cls");
+    cout << "\n\t3> Application using Vector and/or List container";
+    cout << "\n\t" << string(105, char(205));
+    cout << "\n\t1> Add an integer";
+    cout << "\n\t2> Delete an integer";
+    cout << "\n\t3> Display input integers";
+    cout << "\n\t4> Display frequencies of integers";
+    cout << "\n\t" << string(105, char(196));
+    cout << "\n\t0>  Exit";
+    cout << "\n\t" << string(105, char(205));
+    return inputInteger("\n\tOption: ", 0, 4);
+
 }
 
 void optionThree()
 {
-	applicationList list;
-	do {
-		switch (listAndVectorMenu()) {
+    applicationList list;
+    do {
+        switch (listAndVectorMenu()) {
 
         case 0: return;
-		case 1: {
-			int n = inputInteger("\nAdd an integer: ");
-			list.add(n);
-			cout << "\n\tInteger added: " << n << "\n";
-			system("pause");
-			break;
-		}
-		case 2: {
-			int n = inputInteger("\nDelete an integer: ");
+        case 1: {
+            int n = inputInteger("\nAdd an integer: ");
+            list.add(n);
+            cout << "\n\tInteger added: " << n << "\n";
+            system("pause");
+            break;
+        }
+        case 2: {
+            int n = inputInteger("\nDelete an integer: ");
 
-			if (!list.remove(n)) {
-				cout << "\n\tList does not contain " << n << ".\n";
-			}
-			else {
-				cout << "\n\tInteger deleted: " << n << "\n";
-			}
-			system("pause");
-			break;
-		}
+            if (!list.remove(n)) {
+                cout << "\n\tList does not contain " << n << ".\n";
+            }
+            else {
+                cout << "\n\tInteger deleted: " << n << "\n";
+            }
+            system("pause");
+            break;
+        }
 
-		case 3:
-			// Display  integers list
-			list.display();
-			system("pause");
-			break;
+        case 3:
+            // Display  integers list
+            list.display();
+            system("pause");
+            break;
 
-		case 4:
-			// displays number and amount of times it repeats 
-			list.frequencies();
-			system("pause");
-			break;
+        case 4:
+            // displays number and amount of times it repeats 
+            list.frequencies();
+            system("pause");
+            break;
 
-		default:
-			cout << "\nERROR: Invalid option.\n";
-		}
-	} while (true);
+        default:
+            cout << "\nERROR: Invalid option.\n";
+        }
+    } while (true);
 }
 
 
@@ -399,7 +399,6 @@ void optionThree()
 void optionTwo()
 {
     list<student> container;
-
 
     do
     {
@@ -440,7 +439,7 @@ void optionTwo()
         case '0':
             return;
 
-        case 'A':
+        case 'A': // Using clear()
         {
             container.clear();
             if (container.empty())
@@ -450,7 +449,7 @@ void optionTwo()
             break;
         }
 
-        case 'B':
+        case 'B': // Using resize()
         {
             int n = inputInteger("\n\tEnter the new size (1-100): ", 1, 100);
             container.resize(n);
@@ -458,7 +457,7 @@ void optionTwo()
             break;
         }
 
-        case 'C':
+        case 'C': // Read and use push_front(e)
         {
             ifstream inputfile("input.dat");
             if (!inputfile)
@@ -476,7 +475,7 @@ void optionTwo()
             break;
         }
 
-        case 'D':
+        case 'D': // Using pop_front()
         {
             if (container.empty())
             {
@@ -491,7 +490,7 @@ void optionTwo()
             break;
         }
 
-        case 'E':
+        case 'E': // Using front()
         {
             if (container.empty())
             {
@@ -504,7 +503,7 @@ void optionTwo()
             break;
         }
 
-        case 'F':
+        case 'F': // Read and use push_back(s)
         {
             ifstream inputfile("input.dat");
             if (!inputfile)
@@ -522,7 +521,7 @@ void optionTwo()
             break;
         }
 
-        case 'G':
+        case 'G': // Using pop_back()
         {
             if (container.empty())
             {
@@ -537,7 +536,7 @@ void optionTwo()
             break;
         }
 
-        case 'H':
+        case 'H': // Using back()
         {
             if (container.empty())
             {
@@ -550,7 +549,7 @@ void optionTwo()
             break;
         }
 
-        case 'I':
+        case 'I': // Using begin()
         {
             if (container.empty())
             {
@@ -566,7 +565,7 @@ void optionTwo()
             break;
         }
 
-        case 'J':
+        case 'J': // Using end()
         {
             if (container.empty())
             {
@@ -601,7 +600,7 @@ void optionTwo()
             break;
         }
 
-        case 'L':
+        case 'L': // Using rbegin()
         {
             if (container.empty())
             {
@@ -615,7 +614,7 @@ void optionTwo()
             break;
         }
 
-        case 'M':
+        case 'M': // Using rend()
         {
             if (container.empty())
             {
@@ -650,7 +649,7 @@ void optionTwo()
             break;
         }
 
-        case 'O':
+        case 'O': // Using erase(it)
         {
             if (container.empty())
             {
@@ -659,16 +658,18 @@ void optionTwo()
             else
             {
                 list<student>::iterator it = container.begin();
-                if (it != container.end())
-                {
-                    container.erase(it);
-                    cout << "\n\tThe iterator referring the first element: " << &(*it) << "(" << *it << ")\n\n";
-                }
+                student temp = *it;
+
+                cout << "\n\tThe iterator referring to the first element: "
+                    << &(*it) << " (" << temp << ")\n";
+
+                container.erase(it);
+                cout << "\n\tThat element has now been erased.\n";
             }
             break;
         }
 
-        case 'P':
+        case 'P': // Using erase(start_it, end_it)
         {
             if (container.empty())
             {
@@ -676,25 +677,12 @@ void optionTwo()
             }
             else
             {
-                int startPos = inputInteger("\n\tEnter the starting position (0-based): ", 0, (int)container.size() - 1);
-                int endPos = inputInteger("\n\tEnter the ending position (0-based, greater than start): ",(int) startPos + 1, (int)container.size());
-
-                // set iterators to the right positions
                 list<student>::iterator start_it = container.begin();
-                list<student>::iterator end_it = container.begin();
-
-                // move start_it forward startPos steps
-                for (int i = 0; i < startPos; ++i)
-                    ++start_it;
-
-                // move end_it forward endPos steps
-                for (int i = 0; i < endPos; ++i)
-                    ++end_it;
+                list<student>::iterator end_it = container.end();
 
                 container.erase(start_it, end_it);
 
-                cout << "\n\tElements from position " << startPos
-                    << " to " << (endPos - 1) << " have been erased.\n";
+                cout << "\n\tAll elements have been erased using iterators.\n";
             }
             break;
         }
@@ -760,7 +748,7 @@ void optionTwo()
             break;
         }
 
-        case 'S': // sort() - Sorts the list
+        case 'S': // Using sort() - Sorts the list
         {
             if (container.empty())
             {
@@ -774,13 +762,12 @@ void optionTwo()
             }
             break;
         }
-
+        default:
+            cout << "\n\tInvalid input\n";
 
         }
         system("pause");
     } while (true);
-
-
 }
 
 bool readStudentFromFile(ifstream& inputfile, student& s)
@@ -814,3 +801,4 @@ void displayList(const list<student>& container)
         cout << "\t" << s << "\n"; // uses your overloaded operator<<
     }
 }
+
